@@ -11,6 +11,9 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-color: #ffffff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' %3E%3Cdefs%3E%3ClinearGradient id='a' x1='0' x2='0' y1='0' y2='1'%3E%3Cstop offset='0' stop-color='%2380F'/%3E%3Cstop offset='1' stop-color='%23f40'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpattern id='b' width='24' height='24' patternUnits='userSpaceOnUse'%3E%3Ccircle fill='%23ffffff' cx='12' cy='12' r='12'/%3E%3C/pattern%3E%3Crect width='100%25' height='100%25' fill='url(%23a)'/%3E%3Crect width='100%25' height='100%25' fill='url(%23b)' fill-opacity='0.1'/%3E%3C/svg%3E");
+    background-attachment: fixed;
 }
 
 .music-container{
@@ -101,6 +104,7 @@ body{
 }
 .music-info h4{
     margin: 0;
+    text-transform: capitalize;
 }
 .music-container.play .music-info{
     opacity: 1;
@@ -121,4 +125,59 @@ body{
     height: 100%;
     width: 0%;
     transition: width 0.1s linear;
+}
+.music{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 89%;
+}
+.list{
+    position: relative;
+    top: -19px;
+}
+ul{
+    list-style: none;
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    border: 2px solid black;
+    padding: 36px;
+    border-radius: 13px;
+}
+ul li{
+    cursor: pointer;
+}
+
+.cur-play{
+    color: yellow;
+}
+.cur-play::after{
+    content: '';
+    border-right: 2px solid yellow;
+    animation: blink 0.7s infinite;
+}
+@keyframes blink {
+    50%{
+        opacity: 0;
+    }
+}
+h1{
+    font-size: 4rem;
+    margin-top: -80px;
+}
+
+@media screen and (max-width: 768px) {
+    .music{
+        flex-direction: column;
+        width: 80%;
+        margin: auto;
+    }
+    .music-container{
+        zoom: 0.8;
+    }
+    h1{
+        margin: auto;
+        font-size: 3rem;
+        margin-bottom: -34px;
+    }
 }

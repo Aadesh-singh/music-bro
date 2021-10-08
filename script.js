@@ -14,7 +14,11 @@ const songs = ['8parche', 'aafat', 'adhiadhiraat', 'Akhiyan'];
 // keep track of songs
 
 let songIndex = 2;
-
+let li = document.querySelectorAll('li');
+    for(let i=0; i< li.length; i++){
+        li[i].classList.remove('cur-play');
+    }
+    li[songIndex].classList.add('cur-play');
 loadSong(songs[songIndex]);
 
 // update song details
@@ -47,16 +51,38 @@ function prevSong(){
         songIndex = songs.length - 1;
     }
 
+    let li = document.querySelectorAll('li');
+    for(let i=0; i< li.length; i++){
+        li[i].classList.remove('cur-play');
+    }
+    li[songIndex].classList.add('cur-play');
     loadSong(songs[songIndex]);
 
     playSong();
 }
+function curSong(index){
+    songIndex = parseInt(index);
+    let li = document.querySelectorAll('li');
+    for(let i=0; i< li.length; i++){
+        li[i].classList.remove('cur-play');
+    }
+    li[songIndex].classList.add('cur-play');
+    loadSong(songs[songIndex]);
 
+    playSong();
+}
 function nextSong(){
     songIndex++;
     if(songIndex > songs.length - 1){
         songIndex = 0;
     }
+
+    let li = document.querySelectorAll('li');
+    for(let i=0; i< li.length; i++){
+        li[i].classList.remove('cur-play');
+    }
+    li[songIndex].classList.add('cur-play');
+
     loadSong(songs[songIndex]);
     playSong();
 }
