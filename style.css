@@ -105,7 +105,33 @@ body{
 .music-info h4{
     margin: 0;
     text-transform: capitalize;
+    overflow: hidden;
+    margin-left: 0%;
+    position: relative;
+    left: 0px;
+    /* transition: margin-left 0.9s ; */
+    animation: slide 7s infinite;
 }
+
+@keyframes slide {
+    0%{
+        margin-left: 0%;
+    }
+    /* 25%{
+        margin-left: 25%;
+    }
+    50%{
+        margin-left: 50%;
+    }
+    75%{
+        margin-left: 75%;
+    } */
+    100%{
+        margin-left: 100%;
+    }
+}
+
+
 .music-container.play .music-info{
     opacity: 1;
     transform: translateY(-100%);
@@ -141,11 +167,17 @@ ul{
     text-transform: uppercase;
     font-size: 1.6rem;
     border: 2px solid black;
-    padding: 36px;
+    padding: 10px 36px;
     border-radius: 13px;
+    height: 210px;
+    overflow-y: auto;
 }
+::-webkit-scrollbar {
+    display: none;
+  }
 ul li{
     cursor: pointer;
+    margin: 10px 0px;
 }
 
 .cur-play{

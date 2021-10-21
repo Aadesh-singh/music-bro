@@ -10,7 +10,7 @@ const cover = document.querySelector('#cover');
 
 // const songs
 
-const songs = ['8parche', 'aafat', 'adhiadhiraat', 'Akhiyan'];
+const songs = ['8parche', 'aafat', 'adhiadhiraat', 'Akhiyan', 'ace', 'No Competition', 'Takkar'];
 // keep track of songs
 
 let songIndex = 2;
